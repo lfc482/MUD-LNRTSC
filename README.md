@@ -19,7 +19,7 @@ MUD-LNRTSC/
 
 ## Data availability
 
-The field drilling data used in the paper are not publicly released due to confidentiality restrictions and engineering data protection requirements. Only the implementation code, configuration files and dummy-format examples are provided.
+The field drilling data used in the paper are not publicly released due to confidentiality restrictions and engineering data protection requirements. Only the implementation code, configuration files, trained model checkpoints and dummy-format examples are provided. Raw field drilling data and model output results are not included due to confidentiality restrictions.
 
 The file `examples/example_data_format.csv` contains **dummy values** and is used only to demonstrate the required column names.
 
@@ -69,5 +69,5 @@ python scripts/plot_roc.py --prediction_dir results --output figures/Figure_4_1_
 ## Notes
 
 - Raw drilling data should not be uploaded to this repository.
-- Model checkpoints can be placed in `checkpoints/` after confidentiality approval.
+- Trained model checkpoints are provided in `checkpoints/`. Raw field drilling data and model output results are not included due to confidentiality restrictions.
 - The implementation follows the paper setting of multi-well training and single-well testing under leave-one-well-out cross-validation.
