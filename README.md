@@ -69,5 +69,6 @@ python scripts/plot_roc.py --prediction_dir results --output figures/Figure_4_1_
 ## Notes
 
 - Raw drilling data should not be uploaded to this repository.
-- Trained model checkpoints are provided in `checkpoints/`. Raw field drilling data and model output results are not included due to confidentiality restrictions.
+- Trained model checkpoints are provided in `checkpoints/`.
+- Model output results are not included due to confidentiality restrictions.
 - The implementation follows the paper setting of multi-well training and single-well testing under leave-one-well-out cross-validation.
