@@ -1,0 +1,65 @@
+# Data settings
+data_dir: ./data
+save_dir: ./checkpoints
+result_dir: ./results
+file_pattern: well_{well_id}.xlsx
+sheet_name: Sheet1
+well_ids: [1, 2, 3, 4, 5, 6]
+
+# Feature columns used in the paper
+feature_cols:
+  - 井深(8004) m
+  - 钻头位置(8005) m
+  - 大钩高度(8008) m
+  - 大钩负荷(8010) kN
+  - 钻压(8011) kN
+  - 转盘转速(8012) RPM
+  - 扭矩(8013) kN.m
+  - 立管压力(8018) MPa
+  - 套管压力(8019) MPa
+  - 钻时(8020) min/m
+  - 入口密度(8104) g/cm3
+  - 出口密度(8105) g/cm3
+  - 入口流量(8110) L/s
+  - 出口流量(百分)(8137) %
+risk_col: 井壁失稳概率
+
+# Window and label settings
+window_size: 500
+step_size: 2
+risk_threshold: 0.7
+high_risk_ratio_threshold: 0.02
+min_consecutive_high_risk: 5
+
+# Training settings
+epochs: 20
+batch_size: 16
+lr: 0.001
+weight_decay: 0.0001
+grad_clip: 1.0
+val_ratio: 0.2
+seed: 42
+
+# Method parameters
+num_classes: 2
+label_smoothing: 0.1
+warmup_epochs: 4
+low_conf_threshold: 0.60
+high_conf_threshold: 0.85
+ema_decay: 0.95
+
+# Uncertainty parameters
+expert_sigma: 0.10
+boundary_beta: 0.5
+boundary_tau: 10.0
+recon_lambda: 0.1
+teacher_suppress_shift: 0.5
+teacher_suppress_boundary: 0.5
+sample_weight_min: 0.5
+sample_weight_max: 1.5
+
+# Model settings
+conv_channels: 64
+lstm_hidden: 64
+lstm_layers: 1
+dropout: 0.3
